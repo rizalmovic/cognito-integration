@@ -1,0 +1,22 @@
+{
+  "name": "cognito-integration",
+  "version": "1.0.0",
+  "description": "Cognito Integration example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Team 8 - Renodes",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.3.9",
+    "@types/jwk-to-pem": "^2.0.0",
+    "@types/node": "^13.13.4",
+    "aws-sdk": "^2.664.0",
+    "axios": "^0.19.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.3"
+  }
+}
