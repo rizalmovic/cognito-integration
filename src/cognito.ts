@@ -136,7 +136,6 @@ export class Cognito {
   /**
    *
    * Adds the specified user to the specified group.
-   * Registered user will assigned to "user" group by default.
    * Set to null if the request is successful
    * @param {string} username
    * @memberof Cognito
@@ -150,6 +149,28 @@ export class Cognito {
 
     return new Promise((resolve, reject) => {
       this.cognito.adminAddUserToGroup(params).send((err, data) => {
+        if (err) reject(err);
+        else resolve(data);
+      });
+    });
+  }
+
+  /**
+   *
+   * Remove group / role from the specified user.
+   * Set to null if the request is successful
+   * @param {string} username
+   * @memberof Cognito
+   */
+  adminRemoveUserFromGroup(username: string) {
+    const params = {
+      GroupName: this.GROUP_NAME.user /* required */,
+      UserPoolId: this.UserPoolId /* required */,
+      Username: username /* required */,
+    };
+
+    return new Promise((resolve, reject) => {
+      this.cognito.adminRemoveUserFromGroup(params).send((err, data) => {
         if (err) reject(err);
         else resolve(data);
       });
